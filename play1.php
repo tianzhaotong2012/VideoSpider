@@ -5,10 +5,10 @@
 </head>
 <body style="margin:0;padding:0;">
 <video id="videoElement" style="width:100%;padding:0;margin:0;" controls="controls" controls webkit-playsinline poster=<?php echo $_GET["image_url"]; ?>>
-<source src=<?php echo './video/' . $_GET["video_url"] . '.mp4'; ?> type="video/mp4">
+<source src=<?php echo $_GET["video_url"]; ?> type="video/mp4">
 </video>
 
-<img style="display:none;" src=<?php echo $_GET["image_url"]; ?>/>
+<img style="display:none;" src=<?php echo $_GET["image_url"]; ?>>
 
 <h3 style="padding: 0 .4rem;margin-top: 0.5rem;"><?php echo $_GET["title"]; ?></h3>
 
