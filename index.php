@@ -231,8 +231,17 @@
 					    if($item['title'] == '' || $item['image_url'] == ''){
 							continue;
 						}
+						$titleEncode = urlencode($item['title']);
+						/*echo '<li  class="col-lg-3 col-sm-6 col-xs-6 youtube-video">
+									<a href="'. 'http://m.shixunkuaibao.com/VideoSpider/play1.php?video_url='.urlencode($item['video_url']).'&image_url='.urlencode($item['image_url']).'&title='.$titleEncode .'" title="'. $item['title'] .'">
+										<img src="'. $item['image_url'] .'" alt="'. $item['title'] .'" class="img-responsive" height="130px" />
+										<h2>'. $item['title'] .'</h2>
+										<span class="glyphicon glyphicon-play-circle"></span>
+									</a>
+							</li>
+							';*/
 						echo '<li  class="col-lg-3 col-sm-6 col-xs-6 youtube-video">
-									<a href="'. 'play1.php?video_url='.$item['video_url'].'&image_url='.$item['image_url'].'&title='.$item['title'] .'" title="'. $item['title'] .'">
+									<a href="'. 'http://m.shixunkuaibao.com/VideoSpider/play1.php?video_id='.$item['id'].'" title="'. $item['title'] .'">
 										<img src="'. $item['image_url'] .'" alt="'. $item['title'] .'" class="img-responsive" height="130px" />
 										<h2>'. $item['title'] .'</h2>
 										<span class="glyphicon glyphicon-play-circle"></span>

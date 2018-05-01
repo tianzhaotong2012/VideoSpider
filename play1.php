@@ -3,15 +3,34 @@
 <head>
 <meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
 </head>
+<?php 
+    include('mysql.php');
+    function get_video_by_id($id){
+                        if(!is_numeric($id)){
+                            exit();
+                        }
+                        $ret_arr = array();
+                        $sql = 'select * from videos where id = ' . intval($id);
+                        $ret = my_sql($sql);
+                        foreach ($ret as $item) {
+                            array_push($ret_arr, $item);
+                        }
+                        return $ret_arr;
+    }
+    $video_item = get_video_by_id($_GET['video_id']);
+    $video = $video_item[0];
+?>
 <body style="margin:0;padding:0;">
-<video id="videoElement" style="width:100%;padding:0;margin:0;" controls="controls" controls webkit-playsinline poster=<?php echo $_GET["image_url"]; ?>>
-<source src=<?php echo $_GET["video_url"]; ?> type="video/mp4">
+<div id="post_content">
+<video id="videoElement" style="width:100%;padding:0;margin:0;" controls="controls" controls webkit-playsinline poster=<?php echo '"'.$video["image_url"].'"'; ?>>
+<source src=<?php echo '"'.$video["video_url"].'"'; ?> type="video/mp4">
 </video>
 
-<img style="display:none;" src=<?php echo $_GET["image_url"]; ?>>
+<img style="display:none;" src=<?php echo '"'.$video["image_url"].'"'; ?>>
+</div>
 
-<h3 style="padding: 0 .4rem;margin-top: 0.5rem;"><?php echo $_GET["title"]; ?></h3>
-
+<div id="post_title"><h3 style="padding: 0 .4rem;margin-top: 0.5rem;"><?php echo $video["title"]; ?></h3>
+    </div>
 <p style='color: #999;font-size: 14px;margin-top: -1rem;padding: 0.4rem;'>21231次观看</p>
 
 <div class="col-xs-12 kg-padding-lr">
@@ -25,7 +44,7 @@
     margin-right: 0.5rem;
     border-radius: 100%;
     margin-top: -0.3rem;'>
-				发明迷            </span>
+                发明迷            </span>
 
             <button style="visibility: visible;
     font-size: 12px;
