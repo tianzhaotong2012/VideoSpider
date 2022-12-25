@@ -1,8 +1,8 @@
 <?php
 
 define("MYSQLHOST","localhost");
-define("MYSQLUSER","root");
-define("MYSQLPASS","root");
+define("MYSQLUSER","shixun_video");
+define("MYSQLPASS","shixunvideo123");
 define("MYDB","news_video");
 
 function my_sql($sql){

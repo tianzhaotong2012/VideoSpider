@@ -29,7 +29,11 @@
 <img style="display:none;" src=<?php echo '"'.$video["image_url"].'"'; ?>>
 </div>
 
+<<<<<<< HEAD
+<div id="post_title"><h3><?php echo $video["title"]; ?></h3>
+=======
 <div id="post_title"><h3 style="padding: 0 .4rem;margin-top: 0.5rem;"><?php echo $video["title"]; ?></h3>
+>>>>>>> cb23fdbbb21dced03a7d7ac835c8748d0253453b
     </div>
 <p style='color: #999;font-size: 14px;margin-top: -1rem;padding: 0.4rem;'>21231次观看</p>
 
